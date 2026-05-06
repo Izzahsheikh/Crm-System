@@ -53,6 +53,11 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
 
     await users.deleteOne({ _id: new ObjectId(params.id) });
     return NextResponse.json({ ok: true });
+
+
+
+    
+
   } catch (error) {
     console.error("DELETE /api/users/[id]:", error);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
